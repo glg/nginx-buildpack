@@ -14,5 +14,9 @@ http {
 		server_name  _;
 		root <%= ENV['HOME'] %>;
 		index index.html;
+    location = /diagnostic {
+      return 200;
+      access_log off;
+    }
 	}
 }
