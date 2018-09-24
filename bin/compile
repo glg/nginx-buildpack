@@ -10,11 +10,16 @@ sudo apt-get -y install --force-yes nginx
 
 BINDIR=$(dirname "$0")
 
+echo "\$1 is $1"
+ls $1
+
 if [[ ! -f "$1/nginx.conf.erb" ]]; then
+  echo 'No nginx.conf.erb file detected, using buildpack default'
   cp "$BINDIR/../conf/nginx.conf.erb" "$1/nginx.conf.erb"
 fi
 
 if [[ ! -f "$1/mime.types" ]]; then
+  echo 'No mime.types file detected, using buildpack default'
   cp "$BINDIR/../conf/mime.types" "$1/mime.types"
 fi
 
