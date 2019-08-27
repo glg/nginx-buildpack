@@ -9,10 +9,11 @@ deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 EOF
 
+sudo apt-get update
+sudo apt-get -y install --force-yes software-properties-common wget
+
 wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 
-sudo apt-get update
-sudo apt-get -y install --force-yes software-properties-common
 sudo apt-get -y install --force-yes nginx=1.12.*
 
 BINDIR=$(dirname "$0")
