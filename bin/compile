@@ -4,7 +4,7 @@ set -e
 
 sudo apt-get autoremove --purge nginx nginx-common
 
-sudo cat << EOF > /etc/apt/sources.list.d/nginx.list
+sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null <<EOF
 deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx
 EOF
