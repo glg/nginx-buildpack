@@ -14,7 +14,7 @@ sudo apt-get -y install --force-yes software-properties-common wget
 
 wget -q -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
 
-sudo apt-get -y install --force-yes nginx=1.12.*
+sudo apt-get -y install --force-yes nginx
 
 BINDIR=$(dirname "$0")
 
